@@ -1,0 +1,8 @@
+description "Upstart config to manage Thena uWSGI process"
+author "Daniel Kronovet"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+chdir <%= node['thena-infra']['config_dir'] %>
+exec uwsgi --ini thena-uwsgi.ini
