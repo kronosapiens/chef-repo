@@ -42,6 +42,7 @@ end
 ## / END TESTING
 
 service 'thena-uwsgi' do
+  provider Chef::Provider::Service::Upstart
   supports :status => true
   action [:restart]
 end
