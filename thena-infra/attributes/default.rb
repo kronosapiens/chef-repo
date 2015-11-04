@@ -6,8 +6,8 @@ default['thena-infra']['config_dir'] = '/etc/thena/'
 
 # nginx settings
 default['thena-infra']['server_port'] = '80'
-# default['thena-infra']['server_name'] = 'thena.io'
-default['thena-infra']['server_name'] = '0.0.0.0' # Local chef development
+default['thena-infra']['server_name'] = 'thena.io'
+# default['thena-infra']['server_name'] = '0.0.0.0' # Local chef development
 default['thena-infra']['nginx_logfile'] = '/var/log/nginx/access.log' # default
 default['thena-infra']['nginx_errorfile'] = '/var/log/nginx/error.log' # default
 default['thena-infra']['nginx_user'] = 'www-data' # default
@@ -18,8 +18,8 @@ default['thena-infra']['uwsgi_socket'] = '/tmp/thena.sock'
 
 # uwsgi settings
 default['thena-infra']['uwsgi_module'] = 'wsgi:app'
-# default['thena-infra']['uwsgi_user'] = 'ubuntu'
-default['thena-infra']['uwsgi_user'] = 'vagrant' # Local chef development
+default['thena-infra']['uwsgi_user'] = 'ubuntu'
+# default['thena-infra']['uwsgi_user'] = 'vagrant' # Local chef development
 default['thena-infra']['uwsgi_group'] = 'www-data'
 default['thena-infra']['uwsgi_log_dir'] = '/var/log/uwsgi/'
 default['thena-infra']['uwsgi_logfile'] = '/var/log/uwsgi/uwsgi.log'
