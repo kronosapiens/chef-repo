@@ -43,7 +43,7 @@ end
 
 service 'thena-uwsgi' do
   supports :status => true
-  action [:enable, :restart]
+  action [:restart]
 end
 
 service 'nginx' do
