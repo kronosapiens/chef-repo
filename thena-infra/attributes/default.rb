@@ -1,7 +1,7 @@
 # general settings
 default['thena-infra']['project_root'] = '/srv/www/'
 default['thena-infra']['project_dir'] = '/srv/www/thena/'
-default['thena-infra']['app_dir'] = '/srv/www/thena/thena/'
+default['thena-infra']['app_dir'] = '/srv/www/thena/current/thena/' # AWS uses current
 default['thena-infra']['config_dir'] = '/etc/thena/'
 
 # nginx settings
