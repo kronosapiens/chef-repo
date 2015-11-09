@@ -4,5 +4,7 @@ author "Daniel Kronovet"
 start on runlevel [2345]
 stop on runlevel [!2345]
 
+env DATABASE_URL="<%= node['deploy']['thena']['environment_variables']['DATABASE_URL'] %>"
+
 chdir <%= node['thena-infra']['config_dir'] %>
 exec uwsgi --ini thena-uwsgi.ini
