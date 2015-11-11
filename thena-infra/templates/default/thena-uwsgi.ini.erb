@@ -3,7 +3,9 @@ chdir = <%= node['thena-infra']['app_dir'] %>
 module = <%= node['thena-infra']['uwsgi_module'] %>
 
 master = true
-processes = 5
+processes = 3
+lazy-apps = true
+; lazy-apps prevents bug where all processes would share a DB threadpool.
 
 socket = <%= node['thena-infra']['uwsgi_socket'] %>
 chmod-socket = 664
