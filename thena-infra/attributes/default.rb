@@ -3,7 +3,7 @@ default['thena-infra']['app_name'] = 'Thena'
 default['thena-infra']['project_root'] = '/srv/www/'
 default['thena-infra']['project_dir'] = '/srv/www/thena/'
 default['thena-infra']['app_dir'] = '/srv/www/thena/current/thena/' # AWS uses current
-default['thena-infra']['config_dir'] = '/etc/thena/'
+default['thena-infra']['config_dir'] = '/etc/thena/' # Must update app if this changes
 
 # nginx settings
 default['thena-infra']['server_port'] = '80'
