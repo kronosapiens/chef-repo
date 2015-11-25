@@ -1,4 +1,5 @@
 # general settings
+default['thena-infra']['app_name'] = 'Thena'
 default['thena-infra']['project_root'] = '/srv/www/'
 default['thena-infra']['project_dir'] = '/srv/www/thena/'
 default['thena-infra']['app_dir'] = '/srv/www/thena/current/thena/' # AWS uses current
@@ -14,8 +15,6 @@ default['thena-infra']['nginx_user'] = 'www-data' # default
 default['thena-infra']['nginx_group'] = 'www-data'
 default['thena-infra']['uwsgi_socket'] = '/tmp/thena.sock'
 
-
-
 # uwsgi settings
 default['thena-infra']['uwsgi_module'] = 'wsgi:app'
 default['thena-infra']['uwsgi_user'] = 'ubuntu'
@@ -24,6 +23,10 @@ default['thena-infra']['uwsgi_group'] = 'www-data'
 default['thena-infra']['uwsgi_log_dir'] = '/var/log/uwsgi/'
 default['thena-infra']['uwsgi_logfile'] = '/var/log/uwsgi/uwsgi.log'
 default['thena-infra']['uwsgi_pidfile'] = '/var/tmp/uwsgi-app.pid'
+
+# newrelic settings
+default['thena-infra']['newrelic_logfile'] = '/var/log/newrelic/python-agent.log'
+default['thena-infra']['newrelic_loglevel'] = 'info'
 
 # # git settings
 # default['thena-infra']['git_repo_uri'] = 'git@github.com:kronosapiens/thena.git'

@@ -57,6 +57,10 @@ template "#{node['thena-infra']['config_dir']}thena-uwsgi.ini" do
    source 'thena-uwsgi.ini.erb'
 end
 
+template "#{node['thena-infra']['config_dir']}newrelic.ini" do
+   source 'newrelic.ini.erb'
+end
+
 
 # set ownership and permissions
 file node['thena-infra']['nginx_logfile'] do
@@ -83,6 +87,11 @@ file node['thena-infra']['uwsgi_pidfile'] do
     group node['thena-infra']['uwsgi_group']
 end
 
+file node['thena-infra']['newrelic_logfile'] do
+    mode '0644'
+    owner node['thena-infra']['uwsgi_user']
+    group node['thena-infra']['uwsgi_group']
+end
 
 # start nginx
 # note: start as sudo, will spawn child processes w/ www-data owner
