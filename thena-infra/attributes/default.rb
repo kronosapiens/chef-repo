@@ -25,6 +25,7 @@ default['thena-infra']['uwsgi_logfile'] = '/var/log/uwsgi/uwsgi.log'
 default['thena-infra']['uwsgi_pidfile'] = '/var/tmp/uwsgi-app.pid'
 
 # newrelic settings
+default['thena-infra']['newrelic_log_dir'] = '/var/log/newrelic/'
 default['thena-infra']['newrelic_logfile'] = '/var/log/newrelic/python-agent.log'
 default['thena-infra']['newrelic_loglevel'] = 'info'
 

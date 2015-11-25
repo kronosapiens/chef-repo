@@ -35,10 +35,6 @@ directory node['thena-infra']['config_dir'] do
   recursive true
 end
 
-directory node['thena-infra']['uwsgi_log_dir'] do
-  recursive true
-end
-
 
 # copy config files
 template "/etc/nginx/sites-available/thena" do
@@ -61,8 +57,8 @@ template "#{node['thena-infra']['config_dir']}newrelic.ini" do
    source 'newrelic.ini.erb'
 end
 
-
-# set ownership and permissions
+# set up logging
+# nginx
 file node['thena-infra']['nginx_logfile'] do
     mode '0644'
     owner node['thena-infra']['nginx_user']
@@ -75,6 +71,11 @@ file node['thena-infra']['nginx_errorfile'] do
     group node['thena-infra']['nginx_group']
 end
 
+# uwsgi
+directory node['thena-infra']['uwsgi_log_dir'] do
+  recursive true
+end
+
 file node['thena-infra']['uwsgi_logfile'] do
     mode '0644'
     owner node['thena-infra']['uwsgi_user']
@@ -85,6 +86,11 @@ file node['thena-infra']['uwsgi_pidfile'] do
     mode '0644'
     owner node['thena-infra']['uwsgi_user']
     group node['thena-infra']['uwsgi_group']
+end
+
+# newrelic
+directory node['thena-infra']['newrelic_log_dir'] do
+  recursive true
 end
 
 file node['thena-infra']['newrelic_logfile'] do
